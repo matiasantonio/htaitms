@@ -1,0 +1,42 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-back-button text="Atras" defaultHref="/paciente" (click)="regresarModal()">
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      Crear Informe
+    </ion-title>
+
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <form action="">
+        <ion-list>
+  
+          <ion-item>
+              <ion-label position="floating" >Recomendación Medica</ion-label>
+              <ion-textarea placeholder="Ingresar información adicional"
+                            name= "intel"
+                            id="incomentario"
+                            [(ngModel)]="informe.recomendacion_medica"></ion-textarea>
+          </ion-item>
+          
+  
+  
+          
+        </ion-list>
+      </form>  
+      
+      <ion-button type="submit" expand ="full" (click)="crearInforme()">
+          <!-- [disabled] ="formulario.invalid" -->
+        Crear Informe
+      </ion-button>
+
+</ion-content>

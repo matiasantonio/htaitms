@@ -1,0 +1,76 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+
+      <ion-buttons slot="start">
+          <ion-button (click)="toggleMenu()"> 
+            <ion-icon slot="icon-only" name="menu"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+
+    <ion-title>
+      Pacientes en seguimiento
+    </ion-title>
+  </ion-toolbar>
+  <ion-searchbar  animated
+                (ionChange)="buscar( $event )"></ion-searchbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+<!-- Refresher -->
+  
+
+
+
+<!-- Lista de pacientes -->
+
+
+<ion-list>
+  <ion-list-header color="primary">
+      <ion-grid fixed>
+          <ion-row>
+            <ion-col size="8">Nombre</ion-col>
+            <ion-col size="2">PAS </ion-col>
+            <ion-col size="2">PAD </ion-col>
+          </ion-row>
+        </ion-grid>
+  </ion-list-header>
+
+  <ion-item *ngFor="let paciente of pacientes" routerLink="/paciente" (click)="seleccionar(paciente)">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="8">{{paciente.nombres}} {{paciente.apellidos}}</ion-col>
+        <ion-col size="2">120</ion-col>
+        <ion-col size="2">80</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  
+</ion-list>
+
+<!-- <ion-item>
+    <ion-grid fixed>
+        <ion-row>
+          <ion-col size="8">Juan Perez</ion-col>
+          <ion-col size="2">120</ion-col>
+          <ion-col size="2">80</ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-item> -->
+
+
+<!-- 
+Infinite Scroll --> 
+
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed"  routerLink="/crearpaciente">
+     <ion-fab-button color="secondary">
+       <ion-icon name="add" color="light" ></ion-icon>
+     </ion-fab-button>
+   </ion-fab> 
+
+   <!-- <ion-fab horizontal="end" vertical="bottom" slot="fixed" (click)="abrirModal()" >
+    <ion-fab-button>
+      <ion-icon name="add" ></ion-icon>
+    </ion-fab-button>
+  </ion-fab>  -->
+  
+</ion-content> 

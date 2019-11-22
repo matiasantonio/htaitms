@@ -1,0 +1,37 @@
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+     <ion-fab-button color="secondary">
+       <ion-icon name="add" color="light"(click)="crearInforme()"></ion-icon>
+      </ion-fab-button>
+    </ion-fab> 
+
+    <div *ngIf="informes.length > 0" >
+      <ion-card *ngFor="let informe of informes ">
+          <ion-card-header color="primary">
+              <ion-card-subtitle>Dr Ejemplo</ion-card-subtitle>
+              <ion-card-subtitle>Folio: {{ informe.folio }}</ion-card-subtitle>
+              <ion-card-subtitle>Fecha: {{ informe.fecha_informe }}</ion-card-subtitle>
+            </ion-card-header>
+  
+            <ion-card-content>
+            <br>
+              <ion-label>Informe: </ion-label>
+              <p> {{ informe.recomendacion_medica }} </p>
+              
+            </ion-card-content>
+        </ion-card>
+      <br>
+    </div>
+
+ 
+
+    <ion-list *ngIf="informes.length == 0">
+        <ion-grid>
+          <ion-row   >
+            <ion-col size="12" class="ion-text-center">Paciente no tiene registros</ion-col>
+          </ion-row>
+        </ion-grid>
+     
+    </ion-list>
+
+  
+   

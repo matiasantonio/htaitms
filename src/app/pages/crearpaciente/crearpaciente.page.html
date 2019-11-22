@@ -1,0 +1,274 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-back-button text="Atras" defaultHref="/home">
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      Crear paciente
+    </ion-title>
+
+    <!-- <ion-buttons slot="end">
+      <ion-button (click)="onClick()">
+        <ion-icon slot="start" name="add"></ion-icon>
+        Crear
+      </ion-button>
+    </ion-buttons> -->
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <!-- 
+    nombres: text
+    apellidos: text
+    rut: text
+    telefono: text
+    modalidad: toggle
+    sn_equipo: text
+    fecha_nacimiento: date
+    correo: text
+   -->
+    
+    <form action="">
+      <ion-list>
+        <ion-list-header color="primary">
+          <ion-label>Información de Usuario</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+            <ion-label position="floating">Nombres</ion-label>
+            <ion-input  [(ngModel)]="postpaciente.nombres" 
+                        id="innombres"
+                        name="intel" 
+                        type="text" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Apellidos</ion-label>
+            <ion-input [(ngModel)]="postpaciente.apellidos" 
+                       id="inapellidos"
+                       name="intel" 
+                       type="text" ></ion-input>
+        </ion-item>
+    
+        <ion-item>
+            <ion-label position="floating">RUT</ion-label>
+            <ion-input type="text"
+                       id="inrut"
+                       [(ngModel)]="postpaciente.rut"
+                       name="intel"  ></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label position="floating">Numero Serial Dispositivo</ion-label>
+            <ion-input type="text"
+                       [(ngModel)]="postpaciente.sn_equipo"
+                       name="intel"
+                       id="inns"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Fecha de Nacimiento</ion-label>
+              <ion-datetime display-format="YYYY MMMM DD" 
+                          cancelText="Cancelar"
+                          doneText="Aceptar"
+                          [(ngModel)]="postpaciente.fecha_nacimiento"
+                          name="infnacimiento">
+                          Para poder enlazar el elemento a la variable declarada en el ts, se utiliza ngModel  Momentjs utilizar para administrar fechas
+              </ion-datetime>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="floating">Telefono</ion-label>
+          <ion-input type="text"
+                     [(ngModel)]="postpaciente.telefono"
+                     name="intel"  
+                     id="intelefono"
+                     aria-placeholder="Ejemplo: 56912345678"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input type="text"
+                     [(ngModel)]="postpaciente.correo"
+                     name="intel"
+                     id="incorreo"></ion-input>
+        </ion-item>
+        
+
+
+        
+      </ion-list>
+
+<!-- Antecedentes
+//  sexo: mujer - hombre
+//  altura: cm 
+//  peso: kg
+//  pasistolicainicial: number esto se va a quitar cuando la integración se encuentre lista
+//  padiastolicainicial: number esto se va a quitar cuando la integración se encuentre lista
+//  brazo: izquierdo, derecho - ambos
+//  tabaquismo: si - no - noresponde
+//  extabaquismo: si - no - noresponde
+//  colesterol_alto: si - no - noresponde - numero
+//  enfermedades_renales: si - no - noresponde
+//  antecedentes_hta_familiar: si - no - noresponde
+//  sedentarismo: si - no - noresponde
+//  diabetes: si - no - noresponde
+//  enfermedades_cardiacas: si - no - noresponde
+//  accidentes_cardiovasculares: si - no - noresponde
+//  comentario -->
+
+      <ion-list>
+        <ion-list-header color="primary">
+          Antecedentes
+        </ion-list-header>
+        <ion-item>
+            <ion-label position="floating" >Genero</ion-label>
+            <ion-select   cancelText="Cancel" 
+                          okText="Ok" 
+                          name="sexo" 
+                          [(ngModel)]="postpaciente.sexo">
+              <ion-select-option *ngFor="let gender of genders" [value]="gender">{{gender}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Altura (Cm)</ion-label>
+            <ion-input type="text"
+                       [(ngModel)]="postpaciente.altura" 
+                       name="inaltura"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Peso (Kg)</ion-label>
+            <ion-input type="text"
+                       name="inpeso"
+                       [(ngModel)]="postpaciente.peso"
+                       ></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating" >Brazo</ion-label>
+            <ion-select   cancelText="Cancel" 
+                          okText="Ok"
+                          name= "inbrazo"
+                          [(ngModel)]="postpaciente.brazo">
+              <ion-select-option *ngFor="let arm of arms" [value]="arm">{{arm}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating" >Tabaquismo</ion-label>
+            <ion-select cancelText="Cancel" 
+                        okText="Ok"
+                        name="intabaquismo"
+                        [(ngModel)]="postpaciente.tabaquismo"
+                        >
+              <ion-select-option *ngFor="let confirmation of confirmations" [value]="confirmation">{{confirmation}}</ion-select-option>
+            </ion-select>
+        </ion-item>        
+
+        <ion-item>
+            <ion-label position="floating" >Ex-tabaquismo</ion-label>
+            <ion-select  cancelText="Cancel" 
+                         okText="Ok"
+                         name="inextabaquimso"
+                         [(ngModel)]="postpaciente.extabaquismo">
+              <ion-select-option *ngFor="let confirmation of confirmations" [value]="confirmation">{{confirmation}}</ion-select-option>
+            </ion-select>
+        </ion-item> 
+
+        <ion-item>
+            <ion-label position="floating" >Colesterol Alto</ion-label>
+            <ion-select  cancelText="Cancel" 
+                         okText="Ok"
+                         name="incolesterolalto"
+                         [(ngModel)]="postpaciente.colesterol_alto">
+              <ion-select-option *ngFor="let confirmation of confirmations" [value]="confirmation">{{confirmation}}</ion-select-option>
+            </ion-select>
+        </ion-item> 
+
+        <ion-item>
+            <ion-label position="floating" >Enfermedades Renales</ion-label>
+            <ion-select  cancelText="Cancel" 
+                         okText="Ok"
+                         name="inenfermedades"
+                         [(ngModel)]="postpaciente.enfermedades_renales">
+              <ion-select-option *ngFor="let confirmation of confirmations" [value]="confirmation">{{confirmation}}</ion-select-option>
+            </ion-select>
+        </ion-item> 
+
+        <ion-item>
+            <ion-label position="floating" >Antecedentes HTA Familiar</ion-label>
+            <ion-select  cancelText="Cancel" 
+                         okText="Ok"
+                         name= "inantecedenteshta"
+                         [(ngModel)]="postpaciente.antecedentes_hta_familiar">
+              <ion-select-option *ngFor="let confirmation of confirmations" [value]="confirmation">{{confirmation}}</ion-select-option>
+            </ion-select>
+        </ion-item> 
+
+        <ion-item>
+            <ion-label position="floating" >Sedentarismo</ion-label>
+            <ion-select  cancelText="Cancel" 
+                         okText="Ok"
+                         name="insedentarismo"
+                         [(ngModel)]="postpaciente.sedentarismo">
+              <ion-select-option *ngFor="let confirmation of confirmations" [value]="confirmation">{{confirmation}}</ion-select-option>
+            </ion-select>
+        </ion-item> 
+        
+        <ion-item>
+            <ion-label position="floating" >Diabetes</ion-label>
+            <ion-select  cancelText="Cancel" 
+                         okText="Ok"
+                         name="indiabetes"
+                         [(ngModel)]="postpaciente.diabetes">
+              <ion-select-option *ngFor="let confirmation of confirmations" [value]="confirmation">{{confirmation}}</ion-select-option>
+            </ion-select>
+        </ion-item> 
+
+        <ion-item>
+            <ion-label position="floating" >Enfermedades Cardiacas</ion-label>
+            <ion-select  cancelText="Cancel" 
+                         okText="Ok"
+                         name="inenfermedadescardiacas"
+                         [(ngModel)]="postpaciente.enfermedades_cardiacas">
+              <ion-select-option *ngFor="let confirmation of confirmations" [value]="confirmation">{{confirmation}}</ion-select-option>
+            </ion-select>
+        </ion-item> 
+
+        <ion-item>
+            <ion-label position="floating" >Accidente Cardiovascular</ion-label>
+            <ion-select  cancelText="Cancel" 
+                         okText="Ok"
+                         name="inaccidentescardiovasculares"
+                         [(ngModel)]="postpaciente.accidentes_cardiovasculares">
+              <ion-select-option *ngFor="let confirmation of confirmations" [value]="confirmation">{{confirmation}}</ion-select-option>
+            </ion-select>
+        </ion-item> 
+
+        <ion-item>
+            <ion-label position="floating" >Comentario</ion-label>
+            <ion-textarea placeholder="Ingresar información adicional"
+                          name= "intel"
+                          id="incomentario"
+                          [(ngModel)]="postpaciente.comentario"></ion-textarea>
+        </ion-item>
+      </ion-list>
+
+      
+      <ion-button type="submit" expand ="full" (click)="crearPaciente()">
+                  <!-- [disabled] ="formulario.invalid" -->
+        Crear Paciente
+      </ion-button>
+</form>
+  
+
+</ion-content>

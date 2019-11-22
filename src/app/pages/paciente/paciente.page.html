@@ -1,0 +1,49 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-back-button text="Atras" defaultHref="/home">
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      Paciente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-segment (ionChange)="segmentChanged($event)"
+              color="primary"
+              scrollable mode="md">
+  <ion-segment-button value="examenes">
+    <ion-label>Mediciones</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="informes">
+    <ion-label>Informes</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="antecedentes">
+      <ion-label>Antecedentes</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="informacion">
+      <ion-label>Información</ion-label>
+    </ion-segment-button>
+</ion-segment>
+<!-- 
+<ion-segment class="bottom-part">
+    <ion-segment-button *ngFor="let opcion of ['Mediciones', 'Informes', 'Antecedentes', 'Informacion']"
+    (ionChange)="segmentChanged($event)">
+      <ion-label>{{opcion}}</ion-label>
+    </ion-segment-button>
+  </ion-segment> -->
+
+<ion-content class="ion-padding">
+
+<app-mediciones *ngIf="valorSeg === 'examenes'"></app-mediciones>
+
+<app-informes *ngIf="valorSeg === 'informes'"></app-informes>
+
+<app-antecedentes *ngIf="valorSeg === 'antecedentes'" ></app-antecedentes>
+
+<app-informacion *ngIf="valorSeg === 'informacion'" ></app-informacion>
+
+</ion-content>

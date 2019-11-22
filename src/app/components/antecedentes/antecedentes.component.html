@@ -1,0 +1,177 @@
+<form action="">
+<ion-list>
+    <!-- <ion-list-header>
+      Antecedentes
+    </ion-list-header> -->
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">Genero:</ion-col>
+        <ion-col size="6">{{ antecedesntes.sexo }}</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">Altura (Cm)</ion-col>
+        <ion-col size="6">{{ antecedesntes.altura }}</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">Peso (Kg)</ion-col>
+        <ion-col size="6">{{ antecedesntes.peso }}</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">Brazo</ion-col>
+        <ion-col size="6">{{ antecedesntes.brazo }}</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">Tabaquismo:</ion-col>
+        <ion-col size="6">{{ antecedesntes.tabaquismo }}</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">Ex-tabaquismo:</ion-col>
+          <ion-col size="6">{{ antecedesntes.extabaquismo }}</ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">Colesterol Alto:</ion-col>
+            <ion-col size="6">{{ antecedesntes.colesterol_alto }}</ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">Enfermedades Renales:</ion-col>
+            <ion-col size="6">{{ antecedesntes.enfermedades_renales }}</ion-col>
+          </ion-row>
+        </ion-grid>
+  
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">Antecedentes HTA Familiar:</ion-col>
+            <ion-col size="6">{{ antecedesntes.antecedentes_hta_familiar }}</ion-col>
+          </ion-row>
+        </ion-grid>
+  
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">Sedentarismo:</ion-col>
+            <ion-col size="6">{{ antecedesntes.sedentarismo }}</ion-col>
+          </ion-row>
+        </ion-grid>
+ 
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">Diabetes:</ion-col>
+            <ion-col size="6">{{ antecedesntes.diabetes }}</ion-col>
+          </ion-row>
+        </ion-grid>
+ 
+        <ion-grid fixed>
+            <ion-row>
+              <ion-col size="6">Enfermedades Cardiacas:</ion-col>
+              <ion-col size="6">{{ antecedesntes.diabetes }}</ion-col>
+            </ion-row>
+          </ion-grid>
+ 
+        <ion-grid fixed>
+            <ion-row>
+              <ion-col size="12">Comentario:</ion-col>
+              <ion-col size="12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam minus quidem possimus, tempora iste ut! Debitis natus tenetur eius laborum quaerat labore nobis voluptate mollitia, porro ad minima ipsam quam?</ion-col>
+            </ion-row>
+          </ion-grid>
+
+    <!-- <ion-item>
+        <ion-label >Genero:</ion-label>
+        <ion-label>Resultado</ion-label>
+        
+    </ion-item>
+    <ion-item>
+        <ion-label >Altura (Cm)</ion-label>
+        <ion-label>172 Cm</ion-label>
+    </ion-item>
+
+    <ion-item>
+        <ion-label >Peso (Kg)</ion-label>
+        <ion-label>70 Kg</ion-label>
+    </ion-item>
+
+    <ion-item>
+        <ion-label  >Brazo</ion-label>
+        <ion-label>Izquierdo</ion-label>
+    </ion-item>
+
+    <ion-item>
+        <ion-label  >Tabaquismo</ion-label>
+        <ion-label>Si</ion-label>
+    </ion-item>        
+
+    <ion-item>
+        <ion-label  >Ex-tabaquismo</ion-label>
+        <ion-label>Si</ion-label>
+    </ion-item> 
+
+    <ion-item>
+        <ion-label >Colesterol Alto</ion-label>
+        <ion-label>Si</ion-label>
+    </ion-item> 
+
+    <ion-item>
+        <ion-label  >Enfermedades Renales</ion-label>
+        <ion-label>No</ion-label>
+    </ion-item> 
+
+    <ion-item>
+        <ion-label  >Antecedentes HTA Familiar</ion-label>
+        <ion-label>No</ion-label>
+    </ion-item> 
+
+    <ion-item>
+        <ion-label  >Sedentarismo</ion-label>
+        <ion-label>Si</ion-label>
+    </ion-item> 
+    
+    <ion-item>
+        <ion-label >Diabetes</ion-label>
+        <ion-label>No</ion-label>
+    </ion-item> 
+
+    <ion-item>
+        <ion-label >Enfermedades Cardiacas</ion-label>
+        <ion-label>No</ion-label>
+    </ion-item> 
+
+    <ion-item>
+        <ion-label >Accidente Cardiovascular</ion-label>
+        <ion-label>Si</ion-label>
+    </ion-item> 
+
+    <ion-item>
+        <ion-label >Comentario</ion-label>
+        <br>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam minus quidem possimus, tempora iste ut! Debitis natus tenetur eius laborum quaerat labore nobis voluptate mollitia, porro ad minima ipsam quam?
+        </p>
+    </ion-item> -->
+  </ion-list>
+
+  <ion-button type="submit" expand ="full" >
+              <!-- [disabled] ="formulario.invalid" -->
+    Modificar Datos
+  </ion-button>
+
+</form>
